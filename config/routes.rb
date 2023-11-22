@@ -12,4 +12,11 @@ Rails.application.routes.draw do
   end
 
   resources :animals, only: [:index, :show]
+  # index
+  # show
+  # edit
+  # update
+  # create
+  # new
+  # destroy
 end

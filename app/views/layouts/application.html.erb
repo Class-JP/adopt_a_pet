@@ -8,11 +8,15 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <%= stylesheet_link_tag "navbar" %>
+    <%= stylesheet_link_tag "footer" %>
   </head>
 
   <body>
-    <%= render 'layouts/menus/navbar' %>
+    <%= render template: 'layouts/menus/navbar' %>
 
     <%= yield %>
+
+    <%= render template: 'layouts/menus/footer' %>
   </body>
 </html>

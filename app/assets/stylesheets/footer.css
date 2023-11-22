@@ -1,0 +1,17 @@
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+footer {
+  margin-top: auto;
+  width: 100%;
+  text-align: center;
+  background-color: #281b1b;
+}
+
+footer > div {
+  padding: 3em;
+  color: aliceblue;
+}

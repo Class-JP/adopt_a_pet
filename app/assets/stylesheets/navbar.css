@@ -1,0 +1,33 @@
+* {
+  font-family: monospace;
+}
+
+.navbar > nav > ul {
+  display: inline-flex;
+  list-style: none;
+  margin: 0;
+}
+
+.navbar > nav > ul > li {
+  margin: 1.5em;
+}
+
+.navbar {
+  background-color: #632828;
+}
+
+.navbar a {
+  color: aliceblue;
+  text-decoration: none;
+  font-size: x-large;
+}
+
+.navbar a:hover {
+  color: rgb(196, 196, 196);
+}
+
+.image {
+  width: 800px;
+  height: 600;
+  margin: 0 20%;
+}

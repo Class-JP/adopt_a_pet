@@ -1,0 +1,9 @@
+<h1>Matriculas Estudiantiles</h1>
+<h3>Lista de Estudiantes</h3>
+
+<%= render partial: 'students', locals: { students: @matricula[:embeded_students] } %>
+
+<script>
+    var matricula = "<%= @matricula %>"
+    alert(matricula.year)
+</script>

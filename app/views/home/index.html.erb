@@ -1,0 +1,50 @@
+<h1><%= @page_name %></h1>
+<h3>This is the main page!</h3>
+<span>This file is located at: <b>app/views/home/index.html.erb</b> </span>
+
+
+<br>
+<span style="color: blue">
+  <%= mayusculas('deynor') %>
+</span>
+
+<h2>
+  <%= distance_of_time_in_words(Time.now, Time.now + 15.minutes) %>
+</h2>
+
+<%= render partial: 'students', locals: { students: @students } %>
+
+<%= image_tag 'https://cdn.pixabay.com/photo/2023/09/27/07/29/mantis-8278996_1280.jpg', class: 'image'  %>
+
+
+<canvas id="myChart">
+
+</canvas>
+
+<%= javascript_include_tag 'chart' %>
+
+<script>
+
+  const ctx = document.getElementById('myChart');
+
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+      datasets: [{
+        label: '# of Votes',
+        data: [12, 19, 3, 5, 2, 3],
+        borderWidth: 1
+      }]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+</script>
+
+
