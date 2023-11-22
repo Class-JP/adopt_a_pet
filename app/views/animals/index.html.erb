@@ -7,7 +7,7 @@
       <% @animals.each do |animal| %>
 
         <li>
-          <b>Animal:</b> <%= animal.species %>
+          <b>Animal:</b> <%= link_to animal.species, animal %>
         </li>
 
       <% end %>

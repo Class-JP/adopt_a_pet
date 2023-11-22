@@ -3,7 +3,28 @@
 <span>This file is located at: <b>app/views/home/index.html.erb</b> </span>
 
 
+
 <br>
+<br>
+<br>
+<br>
+
+<%= form_with url: '/books', method: :post do |form| %>
+  <%= form.text_field :title %>
+  <%= form.text_field :author %>
+  <%= form.text_field :year %>
+  <%= form.submit 'ENVIAR ESTA COSA!' %>
+<% end %>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+
 <span style="color: blue">
   <%= mayusculas('deynor') %>
 </span>

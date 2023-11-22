@@ -9,5 +9,34 @@
     <p><b>Specie</b> <%= @animal.species %> </p>
     <p><b>Created Date</b> <%= @animal.created_at %> </p>
     <p><b>Updated Date</b> <%= @animal.updated_at %> </p>
+
+    <h2>
+      Associated Pets
+    </h2>
+    <ul>
+      <% @animal.pets.each do |pet| %>
+        <li>
+          <strong>
+            Pet:
+          </strong>
+          <span>
+            <%= pet.name %>
+          <span>
+            -
+          <span>
+            <b>Adopted:</b>
+          <span>
+          <% if pet.adoption_date.present? %>
+            <span style="color: green">
+              Yes
+            </span>
+          <% else %>
+            <span style="color: orange">
+              No
+            </span>
+          <% end %>
+        </li>
+      <% end %>
+    </ul>
   <% end %>
 </section>

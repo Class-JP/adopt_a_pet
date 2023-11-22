@@ -3,7 +3,7 @@ class Pet < ApplicationRecord
   validates_presence_of :name
   
   # Punto numero 2
-  belongs_to :owner
+  belongs_to :owner, optional: true
   belongs_to :animal
 
   # # Punto numero 3
