@@ -1,0 +1,15 @@
+<% if owner.blank? %>
+    <strong>No se encontró el owner indicado!</strong>
+<% elsif action == 'index' %>
+  <li>
+    <b>Owner:</b> <%= link_to owner.name, owner %>
+  </li>
+<% else %>
+  <li>
+    <p><b>Name</b> <%= owner.name %> </p>
+    <p><b>Email</b> <%= owner.email %> </p>
+    <p><b>Age</b> <%= owner.age %> </p>
+    <p><b>Created Date</b> <%= owner.created_at %> </p>
+    <p><b>Updated Date</b> <%= owner.updated_at %> </p>
+  </li>
+<% end %>

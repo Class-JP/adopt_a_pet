@@ -1,0 +1,16 @@
+<section>
+  <% if @owners.empty? %>
+    <strong>There is no owners...</strong>
+  <% else %>
+    <h1>Owners</h1>
+    <ul>
+      <% @owners.each do |owner| %>
+
+        <li>
+          <b>Owner:</b> <%= link_to owner.name, owner %>
+        </li>
+
+      <% end %>
+    </ul>
+  <% end %>
+</section>

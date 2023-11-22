@@ -1,12 +1,13 @@
 class PetsController < ApplicationController
   def index
-    @owner = Owner.find(params[:owner_id])
-
-    render json: @owner.pets
+    if params[:owner_id].present?
+      @owner = Owner.find(params[:owner_id])
+    else
+      @pets = Pet.all
+    end
   end
 
   def show
-
 
   end
 end

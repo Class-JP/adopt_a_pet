@@ -1,0 +1,12 @@
+<section>
+  <% if @owner.blank? %>
+    <strong>No se encontró el owner indicado!</strong>
+  <% else %>
+    <h1>owner:</h1>
+    <p><b>Name</b> <%= @owner.name %> </p>
+    <p><b>Email</b> <%= @owner.email %> </p>
+    <p><b>Age</b> <%= @owner.age %> </p>
+    <p><b>Created Date</b> <%= @owner.created_at %> </p>
+    <p><b>Updated Date</b> <%= @owner.updated_at %> </p>
+  <% end %>
+</section>

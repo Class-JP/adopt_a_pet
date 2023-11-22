@@ -1,0 +1,23 @@
+<section>
+  <% if @owner.blank? %>
+    <strong>There is no pets...</strong>
+  <% else %>
+    <h1>Owner</h1>
+    <p><b>Name</b> <%= @owner.name %> </p>
+    <p><b>Email</b> <%= @owner.email %> </p>
+    <p><b>Age</b> <%= @owner.age %> </p>
+    <h1>Pets</h1>
+    <ul>
+      <% @owner.pets.each do |pet| %>
+
+        <li>
+          <b>Name: </b> <%= pet.name %> <br>
+          <b>Adoption Date: </b> <%= pet.adoption_date %> <br>
+          <b>Created Date: </b> <%= pet.created_at %> <br>
+          <b>Updated Date: </b> <%= pet.updated_at %> <br>
+        </li>
+
+      <% end %>
+    </ul>
+  <% end %>
+</section>

@@ -1,0 +1,13 @@
+<section>
+  <% if @animal.blank? %>
+    <strong>No se encontró el animal indicado!</strong>
+  <% else %>
+    <h1>Animal:</h1>
+    <p><b>Age</b> <%= @animal.age %> </p>
+    <p><b>Color</b> <%= @animal.color %> </p>
+    <p><b>Weight</b> <%= @animal.weight %> </p>
+    <p><b>Specie</b> <%= @animal.species %> </p>
+    <p><b>Created Date</b> <%= @animal.created_at %> </p>
+    <p><b>Updated Date</b> <%= @animal.updated_at %> </p>
+  <% end %>
+</section>

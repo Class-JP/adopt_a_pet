@@ -1,0 +1,16 @@
+<section>
+  <% if @animals.empty? %>
+    <strong>No Hay Animales</strong>
+  <% else %>
+    <h1>Animals</h1>
+    <ul>
+      <% @animals.each do |animal| %>
+
+        <li>
+          <b>Animal:</b> <%= animal.species %>
+        </li>
+
+      <% end %>
+    </ul>
+  <% end %>
+</section>
