@@ -49,6 +49,10 @@ group :development, :test do
   gem "debug", platforms: %i[ mri windows ]
 
   gem 'rspec-rails', '~> 6.0.0'
+  gem 'pry'
+  gem 'pry-remote'
+  gem 'pry-nav'
+  gem 'awesome_print'
 end
 
 group :development do
