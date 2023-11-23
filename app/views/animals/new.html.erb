@@ -1,0 +1,65 @@
+<h1>Create new Animal</h1>
+
+<div class='flash-error'>
+  <% if flash[:error].present? %>
+    <%= flash[:error] %>
+  <% end %>
+</div>
+
+<%= form_with model: @animal do | animal_form | %>
+
+  <%= animal_form.label :age %>
+  <%= animal_form.text_field :age %>
+
+  <% if @animal.errors[:age].present? %>
+    <ul class='errors-list'>
+      <% @animal.errors[:age].each do |error_message| %>
+        <li> <%= error_message %> </li>
+      <% end%>
+    </ul>
+  <% end %>
+
+  <br>
+
+  <%= animal_form.label :color %>
+  <%= animal_form.text_field :color %>
+
+  <% if @animal.errors[:color].present? %>
+    <ul class='errors-list'>
+      <% @animal.errors[:color].each do |error_message| %>
+        <li> <%= error_message %> </li>
+      <% end%>
+    </ul>
+  <% end %>
+
+  <br>
+
+  <%= animal_form.label :weight %>
+  <%= animal_form.text_field :weight %>
+
+  <% if @animal.errors[:weight].present? %>
+    <ul class='errors-list'>
+      <% @animal.errors[:weight].each do |error_message| %>
+        <li> <%= error_message %> </li>
+      <% end%>
+    </ul>
+  <% end %>
+
+  <br>
+
+  <%= animal_form.label :species %>
+  <%= animal_form.select :species, @species %>
+
+  <% if @animal.errors[:species].present? %>
+    <ul class='errors-list'>
+      <% @animal.errors[:species].each do |error_message| %>
+        <li> <%= error_message %> </li>
+      <% end%>
+    </ul>
+  <% end %>  
+
+  <br>
+
+  <%= animal_form.submit %>
+
+<% end %>

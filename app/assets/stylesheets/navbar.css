@@ -31,3 +31,27 @@
   height: 600;
   margin: 0 20%;
 }
+
+
+.errors-list {
+  color: red;
+}
+
+.field_with_errors > input {
+  border-color: red;
+  border-width: 1px;
+}
+
+.flash-notice {
+  color: blue;
+  text-align: center;
+}
+.flash-success {
+  color: green;
+  text-align: center;
+}
+
+.flash-error {
+  color: red;
+  text-align: center;
+}

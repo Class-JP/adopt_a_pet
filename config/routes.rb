@@ -11,7 +11,7 @@ Rails.application.routes.draw do
     resources :pets, only: [:index, :show]
   end
 
-  resources :animals, only: [:index, :show]
+  resources :animals # CRUD create, read, update and delete
   # index
   # show
   # edit

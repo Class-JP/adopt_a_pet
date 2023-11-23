@@ -5,6 +5,8 @@ class Animal < ApplicationRecord
   validates_presence_of :weight
   validates_presence_of :species
 
+  SPECIES_LIST = ['Dog', 'Cat', 'Cow', 'Horse', 'Chicken', 'Parrot', 'Jirafa'].freeze
+
   # Punto numero 2
   has_many :pets
 
