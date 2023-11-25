@@ -1,0 +1,10 @@
+<h1>Create new Owner</h1>
+
+  <% if flash[:error].present? %>
+    <div class='flash flash-error'>
+      <%= flash[:error] %>
+    </div>
+  <% end %>
+
+
+<%= render partial: 'form', locals: { owner: @owner } %>

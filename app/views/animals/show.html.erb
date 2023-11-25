@@ -1,10 +1,10 @@
 <section>
 
-  <div class='flash-notice'>
-    <% if flash[:notice].present? %>
+  <% if flash[:notice].present? %>
+    <div class='flash flash-notice'>
       <%= flash[:notice] %>
-    <% end %>
-  </div>
+    </div>
+  <% end %>
 
   <% if @animal.blank? %>
     <strong>No se encontró el animal indicado!</strong>

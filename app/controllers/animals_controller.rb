@@ -1,4 +1,6 @@
 class AnimalsController < ApplicationController
+  before_action :set_animal_list, only: [:new, :create]
+
   def index
     @animals = Animal.all
   end
@@ -11,8 +13,6 @@ class AnimalsController < ApplicationController
   # /animals/new -> GET
   def new
     @animal = Animal.new
-
-    @species = Animal::SPECIES_LIST
   end
 
   # /animals -> POST
@@ -25,7 +25,6 @@ class AnimalsController < ApplicationController
 
       redirect_to @animal # esto redirige al show... /animals/EL ID DEL ANIMAL NUEVO
     else
-      @species = Animal::SPECIES_LIST
       # binding.pry
       # El bicho se jodio... no se guardo :(
       flash[:error] = 'Error! Cannot create the animal!'
@@ -39,5 +38,9 @@ class AnimalsController < ApplicationController
 
   def animals_params
     params.require(:animal).permit(:age, :color, :weight, :species)
+  end
+
+  def set_animal_list
+    @species = Animal::SPECIES_LIST
   end
 end

@@ -1,0 +1,109 @@
+
+
+<% if owner.new_record? %>
+
+  <div class="add-pet">
+    <%= button_tag 'Adopt a Pet!', id: 'adopt-btn', class: 'button-regular' %>
+  </div>
+
+
+<% end %>
+
+<br>
+<br>
+
+<%= form_with model: owner do | owner_form | %>
+
+  <%= owner_form.label :age %>
+  <%= owner_form.text_field :age %>
+
+  <% if owner.errors[:age].present? %>
+    <ul class='errors-list'>
+      <% owner.errors[:age].each do |error_message| %>
+        <li> <%= error_message %> </li>
+      <% end%>
+    </ul>
+  <% end %>
+
+  <br>
+
+  <%= owner_form.label :name %>
+  <%= owner_form.text_field :name %>
+
+  <% if owner.errors[:name].present? %>
+    <ul class='errors-list'>
+      <% owner.errors[:name].each do |error_message| %>
+        <li> <%= error_message %> </li>
+      <% end%>
+    </ul>
+  <% end %>
+
+  <br>
+
+  <%= owner_form.label :email %>
+  <%= owner_form.email_field :email %>
+
+  <% if owner.errors[:email].present? %>
+    <ul class='errors-list'>
+      <% owner.errors[:email].each do |error_message| %>
+        <li> <%= error_message %> </li>
+      <% end%>
+    </ul>
+  <% end %>
+
+  <br>
+  <br>
+
+  <% if !owner.new_record? && owner.pets.present? %>
+
+    <fieldset id="adopt-pet-section">
+  <% else %>
+
+    <fieldset id="adopt-pet-section" disabled="true" style="display: none;">
+
+  <% end %>
+    <h4>Pet:</h4>
+
+    <%= owner_form.fields_for :pets do |pets_form| %>
+      <%= pets_form.label :name %>
+      <%= pets_form.text_field :name %>
+
+      <br>
+
+      <%= pets_form.label :animal_id %>
+      <%= pets_form.select :animal_id, @animals_list %>
+
+    <% end %>
+
+  </fieldset>
+
+  <br>
+  <br>
+
+  <%= owner_form.submit %>
+
+<% end %>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+
+    const adoptAPetButton = document.getElementById('adopt-btn');
+    const petsFieldsetSection = document.getElementById('adopt-pet-section');
+
+    adoptAPetButton.addEventListener('click', function() {
+      if (
+          petsFieldsetSection.style.display === 'none' || 
+          petsFieldsetSection.style.display === ''
+        )
+        {
+
+        petsFieldsetSection.style.display = 'block';
+        petsFieldsetSection.removeAttribute('disabled');
+      } else {
+        petsFieldsetSection.style.display = 'none';
+        petsFieldsetSection.setAttribute('disabled', true);
+      }
+    });
+  });
+</script>
+

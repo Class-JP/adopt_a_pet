@@ -1,4 +1,13 @@
 <section>
+
+
+  <% if flash[:notice].present? %>
+    <div class='flash flash-notice'>
+      <%= flash[:notice] %>
+    </div>
+  <% end %>
+
   <h1>Owner</h1>
   <%= render partial: 'list', locals: {owner: @owner, view: 'show'} %>
+  <%= link_to 'Edit', "#{owners_path}/#{@owner.id}/edit" %>
 </section>

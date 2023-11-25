@@ -1,10 +1,12 @@
 <h1>Create new Animal</h1>
 
-<div class='flash-error'>
-  <% if flash[:error].present? %>
+
+<% if flash[:error].present? %>
+  <div class='flash flash-error'>
     <%= flash[:error] %>
-  <% end %>
-</div>
+  </div>
+<% end %>
+
 
 <%= form_with model: @animal do | animal_form | %>
 

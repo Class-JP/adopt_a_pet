@@ -4,10 +4,7 @@ Rails.application.routes.draw do
 
   get '/about', to: "home#about"
 
-  resources :owners, only: [:index, :show] do
-    # :owner_id ->
-    # /owners/
-
+  resources :owners do
     resources :pets, only: [:index, :show]
   end
 

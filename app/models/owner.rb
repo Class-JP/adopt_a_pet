@@ -10,6 +10,7 @@ class Owner < ApplicationRecord
 
   # Punto numero 3
   has_many :pets
+  accepts_nested_attributes_for :pets
 
   # Punto numero 4
   def pets_adopted_count
@@ -26,11 +27,3 @@ class Owner < ApplicationRecord
     pets_names.join(', ')
   end
 end
-
-# Owner {id: 1, name: 'Kevin', email...}
-# Pet {id: 1, name: 'Sanzon', adoption_date: 'fecha...', owner_id: 1}
-# Pet {id: 1, name: 'Cornelio', adoption_date: 'fecha...', owner_id: 1}
-# Pet {id: 1, name: 'Melvin', adoption_date: 'fecha...', owner_id: 1}
-
-# kevin = Owner.find_by(name: 'Kevin')
-# kevin.pets_names

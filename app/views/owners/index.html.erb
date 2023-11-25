@@ -1,4 +1,7 @@
 <section>
+  <div>
+    <%= link_to 'Create New Owner', "#{owners_path}/new" %>
+  </div>
   <% if @owners.empty? %>
     <strong>There is no owners...</strong>
   <% else %>
